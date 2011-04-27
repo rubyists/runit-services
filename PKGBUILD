@@ -10,7 +10,7 @@ provides=('runit-services')
 depends=('runit')
 makedepends=('git')
 optdepends=('socklog-dietlibc: advanced logging system' 'runit-services: a collection of commonly used service directories')
-source=('COPYRIGHT')
+source=('COPYRIGHT' README)
 md5sums=('00378d23a0f0d8bb6dbc60d9f0578b7c')
 
 _gitroot="https://github.com/rubyists/runit-services.git"
