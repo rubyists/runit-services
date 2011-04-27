@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/sbin/kdm -nodaemon 1>&2
