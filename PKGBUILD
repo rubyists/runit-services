@@ -2,8 +2,8 @@
 pkgname='runit-services-git'
 pkgver=20110427
 pkgrel=1
+arch=('x86_64' 'i686')
 pkgdesc="A collection of commonly used service directories"
-arch=('all')
 url="http://github.com/rubyists/runit-services"
 license=('custom')
 provides=('runit-services')
@@ -43,7 +43,8 @@ build() {
 
 package() {
   cd "$srcdir/$_gitname-build/"
+  install -D -d "$pkgdir/etc/sv"
   for service in etc/sv/*;do
-    cp -a $service $pkgdir/etc/sv/
+    cp -a $service "$pkgdir/etc/sv/"
   done
 } 
