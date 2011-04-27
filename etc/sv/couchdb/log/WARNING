@@ -1,0 +1,1 @@
+In order to use this logger, we had to setfacl -m u:couchdb:rwx /var/log/couchdb so that couchdb could start clean.

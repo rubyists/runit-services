@@ -1,0 +1,5 @@
+#!/bin/sh
+
+. /etc/conf.d/postgresql
+
+exec chpst -u postgres /usr/sbin/postgres -D $PGROOT/data -c config_file=$PGROOT/data/postgresql.conf

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+export HOME=/var/lib/couchdb
+
+exec chpst -u couchdb:daemon /usr/bin/couchdb 2>&1
