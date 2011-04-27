@@ -1,0 +1,12 @@
+#!/bin/sh
+if [ -e /var/run/dbus.pid ] ; then
+ rm /var/run/dbus.pid
+fi
+if [ ! -x /var/run/dbus ] ; then
+ install -m755 -g 81 -o 81 -d /var/run/dbus
+fi
+if [ -x /usr/bin/dbus-uuidgen ] ; then
+ dbus-uuidgen --ensure
+fi
+sed -i 's/^[[:space:]]*<fork\/>/<!--<fork\/>-->/;s/^[[:space:]]*\(<pidfile>.*<\/pidfile>\)/<!--\1-->/' /etc/dbus-1/system.conf
+exec dbus-daemon --system
