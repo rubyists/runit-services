@@ -1,7 +1,7 @@
 # Maintainer: Kevin Berry <kb@rubyists.com>
 pkgname='runit-services-git'
-pkgver=20110427
-pkgrel=2
+pkgver=20110430
+pkgrel=1
 arch=('x86_64' 'i686')
 pkgdesc="A collection of commonly used service directories"
 url="http://github.com/rubyists/runit-services"
@@ -13,7 +13,8 @@ backup=('etc/sv/avahi/log/run' 'etc/sv/avahi/run' 'etc/sv/couchdb/log/run' 'etc/
 optdepends=('socklog-dietlibc: advanced logging system' 'runit-services: a collection of commonly used service directories')
 source=('COPYRIGHT' "README.md")
 md5sums=('69ec4109404fce21737ac93f9d844d49'
-         'ab40e7102f73fc1a0482da8fdd32c137')
+         '48e57754259ba7b646ff30868b418fef')
+
 
 _gitroot="https://github.com/rubyists/runit-services.git"
 _gitname="runit-services"
