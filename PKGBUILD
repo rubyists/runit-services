@@ -9,6 +9,7 @@ license=('custom')
 provides=('runit-services')
 depends=('runit')
 makedepends=('git')
+backup=('etc/sv/avahi/log/run' 'etc/sv/avahi/run' 'etc/sv/couchdb/log/run' 'etc/sv/couchdb/run' 'etc/sv/cups/log/run' 'etc/sv/cups/run' 'etc/sv/dbus/log/run' 'etc/sv/dbus/run' 'etc/sv/gdm/run' 'etc/sv/kdm/run' 'etc/sv/openntpd/log/run' 'etc/sv/openntpd/run' 'etc/sv/openvpn/log' 'etc/sv/openvpn/log/run' 'etc/sv/openvpn/log/run' 'etc/sv/openvpn/run' 'etc/sv/openvpn/run' 'etc/sv/postgresql/log/run' 'etc/sv/postgresql/run' 'etc/sv/sshd/log/run' 'etc/sv/sshd/run')
 optdepends=('socklog-dietlibc: advanced logging system' 'runit-services: a collection of commonly used service directories')
 source=('COPYRIGHT' "README.md")
 md5sums=('69ec4109404fce21737ac93f9d844d49'
