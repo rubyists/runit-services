@@ -6,13 +6,13 @@ configs = [] # Array to hold list of config files to save
 Find.find("etc") do |path|
   configs << path if File.basename(path) == 'run'
   configs << path if File.basename(path) == 'finish'
-  configs << path if File.dirname(path).match(/env/)
-  configs << path if File.dirname(path).match(/control/)
+  configs << path if File.dirname(path).match(/\/env\//)
+  configs << path if File.dirname(path).match(/\/control\//)
 end
 
 pkgbuild = File.readlines("PKGBUILD")
 
-File.opens("PKGBUILD","w") do |f|
+File.open("PKGBUILD","w") do |f|
   pkgbuild.each do |l|
     l.strip!
     if l[0,6] == "backup"
