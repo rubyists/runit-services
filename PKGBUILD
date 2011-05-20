@@ -15,7 +15,7 @@ md5sums=('69ec4109404fce21737ac93f9d844d49'
 '48e57754259ba7b646ff30868b418fef')
 
 
-_gitroot="https://github.com/rubyists/runit-services.git"
+_gitroot="git://github.com/rubyists/runit-services.git"
 _gitname="runit-services"
 
 build() {
