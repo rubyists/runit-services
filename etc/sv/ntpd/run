@@ -1,0 +1,4 @@
+#!/bin/sh
+source /etc/conf.d/ntp-client.conf
+/usr/bin/ntpd -q $NTP_CLIENT_OPTION
+exec /usr/bin/ntpd $NTPD_ARGS -u ntp -n 2>&1
