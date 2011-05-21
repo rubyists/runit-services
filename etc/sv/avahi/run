@@ -1,3 +1,0 @@
-#!/bin/sh
-sv start dbus || exit 1
-exec avahi-daemon
