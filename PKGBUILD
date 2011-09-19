@@ -1,7 +1,7 @@
 # Maintainer: Kevin Berry <kb@rubyists.com>
 pkgname='runit-services-git'
-pkgver=20110430
-pkgrel=4
+pkgver=20110919
+pkgrel=5
 arch=('x86_64' 'i686')
 pkgdesc="A collection of commonly used service directories"
 url="http://github.com/rubyists/runit-services"
