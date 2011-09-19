@@ -32,11 +32,10 @@ build() {
     msg "GIT checkout done or server timeout"
     msg "Starting make..."
 
-    cd "$srcdir/$_gitname-build"
 }
 
 package() {
-    cd "$srcdir/$_gitname-build/"
+    cd "$srcdir/$_gitname/"
 
     install -D -m 0644 COPYRIGHT "$pkgdir/usr/share/doc/runit-services/COPYRIGHT"
     install -D -m 0644 README.md "$pkgdir/usr/share/doc/runit-services/README.md"
