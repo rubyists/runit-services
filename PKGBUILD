@@ -34,10 +34,6 @@ msg "Starting make..."
 
 cd "$srcdir/$_gitname-build"
 
-#
-# BUILD HERE
-#
-
 }
 
 package() {
