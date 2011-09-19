@@ -23,10 +23,10 @@ build() {
     msg "Connecting to GIT server...."
 
     if [ -d $_gitname ] ; then
-	cd $_gitname && git pull origin
-    msg "The local files are updated."
+      cd $_gitname && git pull origin
+      msg "The local files are updated."
     else
-	git clone --depth=1 $_gitroot $_gitname
+      git clone --depth=1 $_gitroot $_gitname
     fi
 
     msg "GIT checkout done or server timeout"
@@ -42,6 +42,6 @@ package() {
     install -D -d "$pkgdir/etc/sv"
 
     for service in etc/sv/*;do
-	cp -a $service "$pkgdir/etc/sv/"
+      cp -a $service "$pkgdir/etc/sv/"
     done
 }
