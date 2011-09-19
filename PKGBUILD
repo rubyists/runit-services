@@ -19,29 +19,30 @@ _gitroot="git://github.com/rubyists/runit-services.git"
 _gitname="runit-services"
 
 build() {
-cd "$srcdir"
-msg "Connecting to GIT server...."
+    cd "$srcdir"
+    msg "Connecting to GIT server...."
 
-if [ -d $_gitname ] ; then
-cd $_gitname && git pull origin
-msg "The local files are updated."
-else
-git clone --depth=1 $_gitroot $_gitname
-fi
+    if [ -d $_gitname ] ; then
+	cd $_gitname && git pull origin
+    msg "The local files are updated."
+    else
+	git clone --depth=1 $_gitroot $_gitname
+    fi
 
-msg "GIT checkout done or server timeout"
-msg "Starting make..."
+    msg "GIT checkout done or server timeout"
+    msg "Starting make..."
 
-cd "$srcdir/$_gitname-build"
-
+    cd "$srcdir/$_gitname-build"
 }
 
 package() {
-cd "$srcdir/$_gitname-build/"
-install -D -m 0644 COPYRIGHT "$pkgdir/usr/share/doc/runit-services/COPYRIGHT"
-install -D -m 0644 README.md "$pkgdir/usr/share/doc/runit-services/README.md"
-install -D -d "$pkgdir/etc/sv"
-for service in etc/sv/*;do
-cp -a $service "$pkgdir/etc/sv/"
-done
+    cd "$srcdir/$_gitname-build/"
+
+    install -D -m 0644 COPYRIGHT "$pkgdir/usr/share/doc/runit-services/COPYRIGHT"
+    install -D -m 0644 README.md "$pkgdir/usr/share/doc/runit-services/README.md"
+    install -D -d "$pkgdir/etc/sv"
+
+    for service in etc/sv/*;do
+	cp -a $service "$pkgdir/etc/sv/"
+    done
 }
