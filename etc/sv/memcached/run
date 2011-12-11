@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec /usr/bin/memcached -u nobody -l 127.0.0.1 2>&1
