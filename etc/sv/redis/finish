@@ -1,0 +1,8 @@
+#!/bin/sh -e
+
+EXEC=/usr/bin/redis-server
+WORKDIR=/var/lib/redis
+CONF="/etc/redis.conf"
+
+sed -ie 's/^daemonize no/daemonize yes/' $CONF
+exit 0

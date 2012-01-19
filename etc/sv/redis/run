@@ -1,0 +1,7 @@
+#!/bin/sh -e
+EXEC=/usr/bin/redis-server
+WORKDIR=/var/lib/redis
+CONF="/etc/redis.conf"
+[ -d $WORKDIR ] || mkdir $WORKDIR
+sed -ie 's/^daemonize yes/daemonize no/' $CONF
+exec $EXEC 2>&1    
