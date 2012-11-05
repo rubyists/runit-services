@@ -9,7 +9,7 @@ license=('custom')
 provides=('runit-services')
 depends=('runit-dietlibc')
 makedepends=('git')
-backup=('etc/sv/apache2/log/run' 'etc/sv/apache2/run' 'etc/sv/avahi/log/run' 'etc/sv/avahi/run' 'etc/sv/couchdb/log/run' 'etc/sv/couchdb/run' 'etc/sv/cups/log/run' 'etc/sv/cups/run' 'etc/sv/dbus/log/run' 'etc/sv/dbus/run' 'etc/sv/freeswitch/log/run' 'etc/sv/freeswitch/run' 'etc/sv/gdm/run' 'etc/sv/kdm/run' 'etc/sv/lighttpd2/log/run' 'etc/sv/lighttpd2/run' 'etc/sv/mysql/log/run' 'etc/sv/mysql/run' 'etc/sv/ntpd/log/run' 'etc/sv/ntpd/run' 'etc/sv/openntpd/log/run' 'etc/sv/openntpd/run' 'etc/sv/openvpn/log/run' 'etc/sv/openvpn/run' 'etc/sv/postgresql/log/run' 'etc/sv/postgresql/run' 'etc/sv/sshd/log/run' 'etc/sv/sshd/run')
+backup=('etc/sv/apache2/log/run' 'etc/sv/apache2/run' 'etc/sv/avahi/log/run' 'etc/sv/avahi/run' 'etc/sv/couchdb/log/run' 'etc/sv/couchdb/run' 'etc/sv/cups/log/run' 'etc/sv/cups/run' 'etc/sv/dbus/log/run' 'etc/sv/dbus/run' 'etc/sv/freeswitch/log/run' 'etc/sv/freeswitch/run' 'etc/sv/gdm/run' 'etc/sv/kdm/run' 'etc/sv/lighttpd2/log/run' 'etc/sv/lighttpd2/run' 'etc/sv/mongodb/log/run' 'etc/sv/mongodb/run' 'etc/sv/mysql/log/run' 'etc/sv/mysql/run' 'etc/sv/ntpd/log/run' 'etc/sv/ntpd/run' 'etc/sv/openntpd/log/run' 'etc/sv/openntpd/run' 'etc/sv/openvpn/log/run' 'etc/sv/openvpn/run' 'etc/sv/postgresql/log/run' 'etc/sv/postgresql/run' 'etc/sv/sshd/log/run' 'etc/sv/sshd/run')
 source=('COPYRIGHT' "README.md")
 md5sums=('69ec4109404fce21737ac93f9d844d49'
 '48e57754259ba7b646ff30868b418fef')
