@@ -1,0 +1,10 @@
+This directory is a generic run script for fgetty.
+
+To create a service (assuming we are in /etc/sv/fgetty-generic):
+
+# For tty1
+cd /etc/sv
+./fgetty-generic/mksv 1
+
+You will now have /etc/sv/fgetty-tty1 which you can symlink to
+your supervision directory.

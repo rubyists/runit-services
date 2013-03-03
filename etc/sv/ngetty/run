@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec chpst -e ./env /sbin/ngetty tty2 tty3 tty4

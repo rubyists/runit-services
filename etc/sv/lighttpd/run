@@ -1,0 +1,6 @@
+#!/bin/sh
+exec 2>&1
+echo 'lighttpd starting.'
+
+LANG=C LC_ALL=C \
+exec /usr/sbin/lighttpd -f /etc/lighttpd/lighttpd.conf -D

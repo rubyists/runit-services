@@ -1,0 +1,9 @@
+#!/bin/sh -e
+tty=tty${1}
+if [ -d fgetty-${tty} ];then
+  echo "This tty already exists"
+  exit 1
+fi
+mkdir fgetty-${tty}
+ln -s /etc/sv/fgetty-generic/run fgetty-${tty}/
+ln -s /etc/sv/fgetty-generic/finish fgetty-${tty}/

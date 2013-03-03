@@ -1,0 +1,9 @@
+#!/bin/sh -e
+tty=tty${1}
+if [ -d agetty-${tty} ];then
+  echo "This tty already exists"
+  exit 1
+fi
+mkdir agetty-${tty}
+ln -s /etc/sv/agetty-generic/run agetty-${tty}/
+ln -s /etc/sv/agetty-generic/finish agetty-${tty}/

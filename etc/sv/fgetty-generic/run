@@ -1,0 +1,5 @@
+#!/bin/sh
+service=$(basename $(pwd))
+tty=${service/*-}
+
+exec /sbin/fgetty $tty
