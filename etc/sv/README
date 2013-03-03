@@ -1,0 +1,26 @@
+This directory contains service directories.  A service directory has,
+at minimum, and executable file named 'run', which will setup and start
+the service in the foreground.  If logging is sent to standard out,
+you may include a log/ directory in your service, which is essence
+just a standard service, needing only and executable 'run' file, that
+process is expected to accept stdin, which will be directed to it from
+the service process it is a child of.
+
+So:
+
+/etc/sv - contains services
+/etc/sv/sshd - A service directory
+/etc/sv/sshd/run - Starts sshd in the foreground, with logging to stdout
+/etc/sv/sshd/log/run - Starts the logging service for sshd, which accepts that stdout
+                       In this case, we use a symlink to /usr/bin/rsvlog, which is a 
+                       generic wrapper for the runit 'svlogd' logger.  See "man svlogd"
+                       for more information on svlogd, and check out the /usr/bin/rsvlog
+                       shell script for how to write your own.
+
+/service - The supervision directory, this can vary by supervisor, but this is the canonical
+           location, and a symlink to your actual service directory (be it /var/service, /etc/service,
+           whatever)  should be made in order to guarantee compatibility with the widest
+           variety of tools and utilities.
+
+The sv-helper package can be installed from the AUR which adds some simple wrappers for management
+of the symlinks in /service as well as status on services and bringing them up and down.
