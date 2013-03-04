@@ -1,12 +1,4 @@
 #!/usr/bin/env bash 
-# Author: TJ Vanderpoel
-# Licence: MIT
-# This is a generic 'run' script meant to be linked in a log/ directory
-# of a runit service. If the file 'conf' exists, it can modify the behavior
-# of the svlogd in these ways:
-# USERGROUP=user:group (default daemon:adm)
-# SV_LOGDIR=/path/to/log (default `basename $(dirname $PWD)`)
-# CURRENT_LOG_FILE=filename.log (default 'current')
 set -e
 if [ $0 != "./run" ];then
   echo "This script meant to be linked as ./run in a service/log directory only!"
@@ -19,6 +11,11 @@ if [ "$curdir" != "log" ];then
 fi
 if [ -f ./conf ];then
   source ./conf
+fi
+if [ ! -v SV_TIMESTAMP ];then
+  echo "Setting default timestamp"
+  # Default to tai64 timestamps
+  SV_TIMESTAMP="-t"
 fi
 if [ "x$SV_LOGDIR" != "x" ];then
   logdir=$SV_LOGDIR
@@ -39,12 +36,11 @@ if [ -w /var/log ];then
     chown -R $user_group "/var/log/$logdir"
   fi
   echo Logging as $user_group to /var/log/$logdir
-  exec chpst -u $user_group svlogd -t ./main
+  exec chpst -u $user_group svlogd ${SV_TIMESTAMP} ./main
 else
   echo Logging in $PWD
   if [ "x$CURRENT_LOG_FILE" != "x" ];then
     [ -L "$CURRENT_LOG_FILE" ] || ln -s current "$CURRENT_LOG_FILE"
   fi
-  exec svlogd -t ./
+  exec svlogd ${SV_TIMESTAMP} ./
 fi
-
