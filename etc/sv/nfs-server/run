@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #!/bin/bash
 exec 2>&1
@@ -28,7 +28,7 @@ echo "Re-export all directories in /etc/exports"
 /usr/sbin/exportfs -ra > /dev/null
 
 echo "start some nfsd threads"
-/usr/sbin/rpc.nfsd -- $PROCESSES
+/usr/sbin/rpc.nfsd -- ${NFSD_COUNT:-8}
 
 echo "Start the rpc.mountd daemon"
 exec /usr/sbin/rpc.mountd --foreground
