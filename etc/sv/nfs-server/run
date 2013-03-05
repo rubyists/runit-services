@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -x
-
 #!/bin/bash
 exec 2>&1
 
