@@ -1,0 +1,3 @@
+#!/bin/sh
+exec 2>&1
+sed -e -i 's|unix-dgram("/dev/log");|unix-dgram("/run/systemd/journal/syslog");|' /etc/syslog-ng/syslog-ng.conf
