@@ -14,10 +14,9 @@ pkgbuild = File.readlines("PKGBUILD")
 
 File.open("PKGBUILD","w") do |f|
   pkgbuild.each do |l|
-    l.strip!
     if l[0,6] == "backup"
       l = "backup=(\'#{configs.join("\' \'")}\')"
     end
-    f.puts l
+    f.puts l.chomp
   end
 end
