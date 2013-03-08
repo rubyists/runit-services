@@ -1,4 +1,4 @@
 #!/bin/sh
 exec 2>&1
-sed -e -i 's|unix-dgram("/run/systemd/journal/syslog");|unix-dgram("/dev/log");|' /etc/syslog-ng/syslog-ng.conf
+sed -i -e 's|unix-dgram("/run/systemd/journal/syslog");|unix-dgram("/dev/log");|' /etc/syslog-ng/syslog-ng.conf
 exec syslog-ng -F
