@@ -1,6 +1,6 @@
 #!/bin/sh -e
 if [ -f /etc/conf.d/ntp-client.conf ];then
-  source /etc/conf.d/ntp-client.conf
+  . /etc/conf.d/ntp-client.conf
 fi
 /usr/bin/ntpd -n -q $NTP_CLIENT_OPTION
 exec /usr/bin/ntpd $NTPD_ARGS -u ntp -n 2>&1
